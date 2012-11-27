@@ -6,7 +6,7 @@
         <ul class="nav pull-right">
           <% if signed_in? %>
             <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
-            <li><%= link_to "My Account", '#' %></li>
+            <li><%= link_to "My Account", edit_user_path(current_user) %></li>
           <% else %>
             <li><%= link_to "Sign in", signin_path %></li>         
             <li><%= link_to "or Sign up", signup_path %></li>
