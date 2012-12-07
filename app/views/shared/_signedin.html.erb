@@ -1,0 +1,4 @@
+<% if @conversation_items.any? %>
+<%= render partial: 'conversation_item', collection: @conversation_items %>
+<% end %>
+<%= link_to "Start a conversation", start_path, class: "btn btn-large btn-primary" %>

@@ -1,0 +1,18 @@
+<% provide(:title, 'New Conversation') %>
+<h1>New Conversation</h1>
+
+<div class="row">
+  <div class="span3 offset3">  	
+  	<%= form_for(@conversation) do |f| %>
+  	<%= render 'shared/error_messages', object: f.object %>
+
+  	<%= f.label :subject %>
+  	<%= f.text_field :subject %>
+
+  	<%= f.label :content, "Compose new Micropost" %>
+  	<%= f.text_area :content %>
+
+  	<%= f.submit "Post", class: "btn btn-large btn-primary" %>
+  	<% end %>
+  </div>
+</div>

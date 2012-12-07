@@ -1,0 +1,7 @@
+<% provide(:title, @conversation.subject) %>
+<%= render 'conversation_init' %>
+
+<%= form_for(@reply) do |f| %>
+	<%= render 'shared/reply_form', f: f %>
+	<%= f.submit "Reply", class: "btn btn-large btn-primary" %>
+<% end %>

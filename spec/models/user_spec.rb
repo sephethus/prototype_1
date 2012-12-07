@@ -13,6 +13,9 @@ describe User do
   it { should respond_to(:password_confirmation) }
   it { should respond_to(:password_confirmation) }
   it { should respond_to(:authenticate) }
+  it { should respond_to(:conversations) }
+  it { should respond_to(:replies) }
+  it { should respond_to(:comments) }
 
   it { should be_valid }
 
@@ -110,4 +113,5 @@ describe User do
     before { @user.save }
     its(:remember_token) { should_not be_blank }
   end
+  
 end

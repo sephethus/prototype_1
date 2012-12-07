@@ -2,3 +2,8 @@
 <p>
 This is prototype one.
 </p>
+<% if signed_in? %>
+	<%= render 'shared/signedin' %>
+<% else %>
+	<%= render 'shared/signedout' %>
+<% end %>

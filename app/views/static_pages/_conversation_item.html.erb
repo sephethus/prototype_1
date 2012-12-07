@@ -1,0 +1,5 @@
+<li id="<%= conversation_item.id %>">
+	<%= link_to conversation_item.subject, conversation_item %>
+	<%= conversation_item.content %>
+	Posted <%= time_ago_in_words(conversation_item.created_at) %> ago.
+</li>
