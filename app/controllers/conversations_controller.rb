@@ -37,5 +37,3 @@ private
   end
 
 end
-
-#LEFT OFF: "Couldn't find User without an ID" error when creating conv.

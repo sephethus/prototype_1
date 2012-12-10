@@ -29,4 +29,8 @@ private
       @reply = current_user.replies.find_by_id(params[:id])
       redirect_to root_url if @conversation.nil?
   end
+
+  def conversation
+    @conversation ||= Conversation.find(params[:conversation_id])
+  end
 end
