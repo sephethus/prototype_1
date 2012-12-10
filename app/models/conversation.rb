@@ -7,4 +7,5 @@ class Conversation < ActiveRecord::Base
   validates :content, presence: true, length: { maximum: 3000 }
   validates :subject, presence: true, length: { maximum: 80 }
   
+  
 end

@@ -1,7 +1,7 @@
 <% provide(:title, @conversation.subject) %>
 <%= render 'conversation_init' %>
-<% if @reply_items.any? %>
-	<%= render 'reply_item', collection: @reply_items %>
+<% if @replies.any? %>
+	<%= render @replies %>
 <% end %>
 <%= form_for([@conversation, @reply]) do |f| %>
 	<%= render 'shared/reply_form', f: f %>

@@ -8,7 +8,7 @@ class ConversationsController < ApplicationController
 
   def show
     @conversation = Conversation.find(params[:id])
-    @reply_items = @conversation.replies
+    @replies = @conversation.replies
     @reply = @conversation.replies.build
   end
 
