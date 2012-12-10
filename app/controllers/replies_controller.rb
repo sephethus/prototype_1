@@ -7,7 +7,7 @@ class RepliesController < ApplicationController
   end
 
   def create
-  	@reply = conversation.replies.build(content: params[:reply], user_id: current_user.id)
+  	@reply = conversation.replies.build(content: params[:reply][:content], user_id: current_user.id)
   	if @reply.save
   	  	flash[:success] = "Post created!"
   	  	redirect_to conversation_path(@conversation)
