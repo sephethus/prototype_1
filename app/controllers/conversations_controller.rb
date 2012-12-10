@@ -9,7 +9,7 @@ class ConversationsController < ApplicationController
   def show
     @conversation = Conversation.find(params[:id])
     @replies = @conversation.replies
-    @reply = @conversation.replies.build
+    @reply = current_user.replies.build
   end
 
   def create

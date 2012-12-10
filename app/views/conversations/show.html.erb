@@ -1,7 +1,7 @@
 <% provide(:title, @conversation.subject) %>
 <%= render 'conversation_init' %>
 <% if @replies.any? %>
-	There are no replies, this really shouldn't be showing, but it is.
+	<%= render @replies %>
 <% end %>
 <%= form_for([@conversation, @reply]) do |f| %>
 	<%= render 'shared/reply_form', f: f %>
