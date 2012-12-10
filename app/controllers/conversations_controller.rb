@@ -10,6 +10,7 @@ class ConversationsController < ApplicationController
     @conversation = Conversation.find(params[:id])
     @replies = @conversation.replies
     @reply = current_user.replies.build
+    #If I change the above line to @conversations.replies.build it breaks
   end
 
   def create
