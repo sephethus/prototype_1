@@ -1,18 +1,19 @@
 class RepliesController < ApplicationController
   before_filter :signed_in_user, only: [:create, :edit]
-  #before_filter :correct_user,   only: [:edit]
+  before_filter :correct_user,   only: [:edit]
 
   def new
   	@reply = conversation.replies.build
   end
 
   def create
-  	@reply = conversation.replies.build(params[:reply], user_id: current_user.id)
+  	@reply = conversation.replies.build(content: params[:reply], user_id: current_user.id)
   	if @reply.save
   	  	flash[:success] = "Post created!"
-  	  	redirect_to root_url
+  	  	redirect_to conversation_path(@conversation)
   	else
-  		redirect_to root_url
+        flash[:error] = @reply.errors.full_messages
+  	    redirect_to conversation_path(@conversation)
   	end
   end
 
@@ -27,7 +28,7 @@ private
 
   def correct_user
       @reply = current_user.replies.find_by_id(params[:id])
-      redirect_to root_url if @conversation.nil?
+      redirect_to root_url if @reply.nil?
   end
 
   def conversation
