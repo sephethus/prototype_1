@@ -3,7 +3,9 @@ Prototype1::Application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resources :conversations do
-    resources :replies
+    resources :replies do
+      resources :comments
+    end
   end
 
   root to: 'static_pages#home'

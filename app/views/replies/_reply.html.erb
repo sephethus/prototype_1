@@ -1,3 +1,6 @@
 <hr>
 <%= reply.content %>
 Posted <%= time_ago_in_words(reply.created_at) %> ago.
+<%= form_for([@reply, @comment]) do |f| %>
+	<%= render 'shared/response_form', f: f %>
+<% end %>
